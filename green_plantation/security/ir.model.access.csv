@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+green_plantation.access_plant_user,access_plant_user,green_plantation.model_plant_user,base.group_user,1,1,1,1
+green_plantation.access_products,access_products,green_plantation.model_products,base.group_user,1,1,1,1
+green_plantation.access_orders,access_orders,green_plantation.model_orders,base.group_user,1,1,1,1
