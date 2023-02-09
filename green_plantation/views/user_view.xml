@@ -10,4 +10,40 @@
                 </p>
             </field>
     </record>
+    <record id="user_view_tree" model="ir.ui.view">
+        <field name="name">Users</field>
+        <field name="model">plant.user</field>
+        <field name="arch" type="xml">
+            <tree string="Prpperties">
+                <field name="uname"/>
+                <field name="address"/>
+                <field name="phone_no"/>
+                <field name="email"/>
+                <field name="user_role"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="user_view_form" model="ir.ui.view">
+        <field name="name">Users</field>
+        <field name="model">plant.user</field>
+        <field name="arch" type="xml">
+            <form string="Users">
+                <sheet>
+                    <br/>
+                    <label for="uname"/>
+                    <h1><field name="uname" placeholder="Priyanshi Patel"/></h1>
+                    <group>
+                        <group>
+                            
+                            <field name="address"/>
+                            <field name="phone_no"/>
+                            <field name="email"/>
+                            <field name="user_role"/>
+                        </group>
+                    </group>                       
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
