@@ -12,7 +12,14 @@
     'data' : [
         'security/ir.model.access.csv',
         'views/user_view.xml',
-        'views/product_view.xml',
+        'views/plant_product_view.xml',
+        'views/product_category_plant.xml',
+        'views/product_category_fertilizer.xml',
+        'views/product_category_seeds.xml',
+        'views/product_category_soil.xml',
+        'views/product_category_water.xml',
+        'views/product_category_plant_product.xml',
+        'views/product_vendor.xml',
         'views/order_view.xml',
         'views/plant_menus.xml'     
     ]

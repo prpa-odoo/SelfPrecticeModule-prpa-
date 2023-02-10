@@ -34,14 +34,27 @@
                     <label for="uname"/>
                     <h1><field name="uname" placeholder="Priyanshi Patel"/></h1>
                     <group>
-                        <group>
-                            
+                        <group>                      
                             <field name="address"/>
                             <field name="phone_no"/>
-                            <field name="email"/>
-                            <field name="user_role"/>
+                            <field name="email" placeholder="priyanshi@gmail.com"/>
+                            <field name="user_role" widget="radio"/>
                         </group>
-                    </group>                       
+                    </group> 
+                    <notebook>
+                        <page string="Farmer">
+                            <group>
+                                <field name="work_place"/>
+                            </group>
+                        </page>
+                        <page string="caretaker">
+                            <group>
+                                <field name="caretaker_work_place"/>
+                                <field name="add_caretaker"/>
+                                <field name="experiance"/>
+                            </group>
+                        </page>
+                    </notebook>                      
                 </sheet>
             </form>
         </field>

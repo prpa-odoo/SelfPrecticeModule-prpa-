@@ -9,6 +9,15 @@ class PlantUser(models.Model):
    phone_no=fields.Integer(string="PhoneNo")
    email=fields.Char(string="Email")
    user_role=fields.Selection(
-      string="Select User",
-      selection=[('customer','Customer'),('farmer','Farmar'),('visitor','Visitor'),('caretaker','Caretaker')]
+      string="Type Of User",
+      selection=[('customer','Customer'),('farmer','Farmar'),('caretaker','Caretaker')]
    )
+
+   work_place=fields.Many2one('product.vendor',string="Nursery Place")
+
+   caretaker_work_place=fields.Text(string="Reason To Previous Work Space")
+   add_caretaker=fields.Text(string="Address Of Previous Workspace")
+
+   experiance=fields.Integer(string="Experiance")
+
+

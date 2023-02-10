@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="plant_product_action" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">plant.product</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Enter Your First Record!!
+                </p>
+            </field>
+    </record>
+    <record id="plant_product_tree_view" model="ir.ui.view">
+        <field name="name">Products</field>
+        <field name="model">plant.product</field>
+        <field name="arch" type="xml">
+            <tree string="Prpperties">
+                <field name="nursery_name" />
+                <field name="name" />
+                <field name="product_plant_id" />
+                <field name="description" />
+                <field name="product_price" />
+            </tree>
+        </field>
+    </record>
+    <record id="plant_product_form_view" model="ir.ui.view">
+        <field name="name">Products</field>
+        <field name="model">plant.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                            <label for="name" string="Enter Project Name"/>
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                             <div style="position: absolute;right: 40px;top:15px;height:150px;width:150px">
+                             <field name="product_img" widget="image" nolabel="1"/>
+                             </div>
+                        
+                            <group>
+                                <field name="nursery_name"/>
+                                <field name="description" />
+                                <field  name="product_category" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="product_price" />
+                            </group>    
+                        
+                   
+                    <div style="margin-top:30px"/>
+                        <notebook>
+                            <page string="Plants">
+                                <group>  
+                                    <group> 
+                                        <field name="product_plant_id" />
+                                        <field name="product_fertilizer_id"/>
+                                        <field name="product_seeds_id"/>
+                                    </group>
+                                    <group> 
+                                        <field name="product_soil_id" />
+                                        <field name="product_water_id" />
+                                        <field name="product_plantproduct_id" />
+                                    </group>    
+                                </group>
+                            </page>
+                            <page string="Medicine">
+                                <group>   
+                                    <field name="product_medicine" />
+                                </group>
+                            </page>
+                            <page string="Tools">
+                                <group>   
+                                    <field name="product_tools" />
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

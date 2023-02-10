@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_category_soil" model="ir.actions.act_window">
+            <field name="name">Soil</field>
+            <field name="res_model">product.category.soil</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Enter Your First Record!!
+                </p>
+            </field>
+    </record>
+    <record id="product_category_soil_tree_view" model="ir.ui.view">
+        <field name="name">Soil</field>
+        <field name="model">product.category.soil</field>
+        <field name="arch" type="xml">
+            <tree string="Prpperties">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="product_category_soil_form_view" model="ir.ui.view">
+        <field name="name">Soil</field>
+        <field name="model">product.category.soil</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="name" string="Enter Soil Type"/>
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
