@@ -44,7 +44,7 @@
                     <notebook>
                         <page string="Farmer">
                             <group>
-                                <field name="work_place"/>
+                                <field name="work_place_ids"/>
                             </group>
                         </page>
                         <page string="caretaker">
@@ -57,6 +57,23 @@
                     </notebook>                      
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="user_view_search" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">plant.user</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="uname"/>
+                <field name="address"/>
+                <field name="phone_no"/>
+                <field name="email"/>
+                <field name="user_role" />
+                <group>
+                    <filter string="User Role" name="user_role" context="{'group_by':'user_role'}" />
+                </group>
+            </search>
         </field>
     </record>
 </odoo>

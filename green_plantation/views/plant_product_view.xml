@@ -17,6 +17,7 @@
             <tree string="Prpperties">
                 <field name="nursery_name" />
                 <field name="name" />
+                <field name="product_img" widget="image"/>
                 <field name="product_plant_id" />
                 <field name="description" />
                 <field name="product_price" />
@@ -29,7 +30,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                            <label for="name" string="Enter Project Name"/>
+                            <label for="name" string="Enter Product Name"/>
                             <h1>
                                 <field name="name" />
                             </h1>
@@ -37,14 +38,27 @@
                              <field name="product_img" widget="image" nolabel="1"/>
                              </div>
                         
+                             <div style="margin-top:30px"/>
+                             <group>
+                                <group string="Types of Product">
+                                    <field  name="product_category" widget="radio" nolabel="1"/>
+                                </group>
+                            </group>
+
+                            <div style="margin-top:30px"/>
                             <group>
                                 <field name="nursery_name"/>
                                 <field name="description" />
-                                <field  name="product_category" widget="radio"/>
+                                
                             </group>
                             <group>
-                                <field name="product_price" />
-                            </group>    
+                                <group>
+                                    <field name="product_price" />
+                                </group>
+                                <group>
+                                    <field name="product_quantity"/>
+                                </group>  
+                            </group>  
                         
                    
                     <div style="margin-top:30px"/>
@@ -55,6 +69,7 @@
                                         <field name="product_plant_id" />
                                         <field name="product_fertilizer_id"/>
                                         <field name="product_seeds_id"/>
+                                        <field name="product_weather_ids"/> 
                                     </group>
                                     <group> 
                                         <field name="product_soil_id" />

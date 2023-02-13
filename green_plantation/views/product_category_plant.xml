@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="product_category_plant" model="ir.actions.act_window">
-            <field name="name">Category</field>
+            <field name="name">Plant</field>
             <field name="res_model">product.category.plant</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
@@ -11,7 +11,7 @@
             </field>
     </record>
     <record id="product_category_plant_tree_view" model="ir.ui.view">
-        <field name="name">Category</field>
+        <field name="name">Plant</field>
         <field name="model">product.category.plant</field>
         <field name="arch" type="xml">
             <tree string="Prpperties">
@@ -20,7 +20,7 @@
         </field>
     </record>
     <record id="product_category_plant_form_view" model="ir.ui.view">
-        <field name="name">Category</field>
+        <field name="name">Plant</field>
         <field name="model">product.category.plant</field>
         <field name="arch" type="xml">
             <form>
@@ -31,6 +31,19 @@
                     </h1>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="product_category_plant_Search_view" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">product.vendor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <group>
+                    <filter string="Product Type" name="name" context="{'group_by':'name'}" />
+                </group>
+            </search>
         </field>
     </record>
 </odoo>

@@ -3,7 +3,7 @@
     <menuitem id="plantation_menu_root" name="Green Plantation">
         <menuitem id="plantation_first_level_menu" name="Users">
             <menuitem id="plantation_user_action" name="customers" action="plant_action"/>
-            <menuitem id="plantation_vendor_action" name="Vendor" action="product_vendor"/>
+            <menuitem id="plantation_vendor_action" name="Nursery" action="product_vendor"/>
         </menuitem>
         <menuitem id="plantation_second_level_menu" name="Products">
             <menuitem id="plantation_product_action" name="products" action="plant_product_action"/>
@@ -14,9 +14,10 @@
             <menuitem id="plantation_seeds_category_action" name="Seeds" action="product_category_seeds"/>
             <menuitem id="plantation_soil_category_action" name="Soil" action="product_category_soil"/>
             <menuitem id="plantation_water_category_action" name="Water" action="product_category_water"/>
-            <menuitem id="plantation_product_category_action" name="Plant_Product" action="product_category_plant_product"/>
+            <menuitem id="plantation_product_category_action" name="Plant Product" action="product_category_plant_product"/>
+            <menuitem id="plant_category_weather_action" name="Weather Condition" action="plant_weather_action"/>
 
-        </menuitem>  
+        </menuitem> 
         <menuitem id="plantation_fourth_level_menu" name="Orders">
             <menuitem id="plantation_order_action" name="orders" action="order_action"/>
         </menuitem>    

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="plant_weather_action" model="ir.actions.act_window">
+            <field name="name">Weather</field>
+            <field name="res_model">product.temperature</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Enter Your First Record!!
+                </p>
+            </field>
+    </record>
+
+    <record id="plant_weather_tree_view" model="ir.ui.view">
+        <field name="name">Weather</field>
+        <field name="model">product.temperature</field>
+        <field name="arch" type="xml">
+            <tree string="Prpperties">
+                <field name="name" />
+                <field name="weather_temp" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="plant_weather_form_view" model="ir.ui.view">
+        <field name="name">Weather</field>
+        <field name="model">product.temperature</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                           <field name="name" widget="radio"/>
+                           <field name="weather_temp" />
+                       </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="plant_weather_search_view" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">product.temperature</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="weather_temp" />
+                <group>
+                    <filter string="Name" name="name" context="{'group_by':'name'}" />
+                    <filter string="Temperature" name="weather_temp" context="{'group_by':'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="product_vendor" model="ir.actions.act_window">
-            <field name="name">Vendor</field>
+            <field name="name">Nursery</field>
             <field name="res_model">product.vendor</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
@@ -11,7 +11,7 @@
             </field>
     </record>
     <record id="product_vendor_tree_view" model="ir.ui.view">
-        <field name="name">Vendor</field>
+        <field name="name">Nursery</field>
         <field name="model">product.vendor</field>
         <field name="arch" type="xml">
             <tree string="Prpperties">
@@ -24,7 +24,7 @@
         </field>
     </record>
     <record id="product_vendor_form_view" model="ir.ui.view">
-        <field name="name">Vendor</field>
+        <field name="name">Nursery</field>
         <field name="model">product.vendor</field>
         <field name="arch" type="xml">
             <form>
@@ -33,7 +33,7 @@
                     
                     <h1>
                         <group>
-                            <field name="name" placeholder="tree,climbers"/>
+                            <field name="name" placeholder="House Plant Club"/>
                         </group>
                         
                     </h1>
@@ -44,7 +44,8 @@
 
                         </group>
                         <group>
-                            <field name="experiance" placeholder="2"/>
+                            <field name="establish_date"/>
+                            <field name="experiance"/>
                         </group>
                     </group>
                     <div style="margin-top:30px"/>
@@ -55,6 +56,19 @@
                     
                 </sheet>
             </form>
+        </field>
+    </record>
+    <record id="plant_product_search_view" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">product.vendor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="experiance"/>
+                <field name="address"/>
+
+                
+            </search>
         </field>
     </record>
 </odoo>

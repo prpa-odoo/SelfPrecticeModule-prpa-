@@ -20,6 +20,7 @@
         'views/product_category_water.xml',
         'views/product_category_plant_product.xml',
         'views/product_vendor.xml',
+        'views/plant_weather.xml',
         'views/order_view.xml',
         'views/plant_menus.xml'     
     ]
