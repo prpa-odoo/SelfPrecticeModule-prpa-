@@ -9,7 +9,7 @@ class ProductVendor(models.Model):
     contact_no=fields.Char(string="Contact Number")
     address=fields.Text(string="Address")
     email=fields.Char(string="Enter E-mail Id")
-    experiance=fields.Integer(readonly=True,required=True,string="Experiance Year")
+    experiance=fields.Integer(readonly=True,string="Experiance Year")
     establish_date=fields.Selection(selection='years_selection',
         string="Establish Year")
     def years_selection(self):

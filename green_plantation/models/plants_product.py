@@ -4,7 +4,7 @@ class PlantProduct(models.Model):
     _name="plant.product"
     _description="See All Available Products"
 
-    nursery_name=fields.Char(required=True)
+    nursery_name=fields.Many2one('product.vendor',required=True)
     name=fields.Char(required=True,string="Product Title")
     description=fields.Text(required=True,string="Description")
     product_category=fields.Selection(

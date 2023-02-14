@@ -93,4 +93,32 @@
             </form>
         </field>
     </record>
+    <record id="plant_products_search_view" model="ir.ui.view">
+        <field name="name">Search</field>
+        <field name="model">plant.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_plant_id" />
+                <field name="product_fertilizer_id"/>
+                <field name="product_seeds_id"/>
+                <field name="product_weather_ids"/>
+                <field name="product_soil_id" />
+                <field name="product_water_id" />
+                <field name="product_plantproduct_id" />
+                <field name="product_price" />
+                <field name="product_tools" />
+                <!-- <filter string="Category" name="product_category"
+                    domain="[('product_category','in',('plant','medicine','tools'))]" /> -->
+                <group>
+                    <filter string="Weather" name="product_weather_ids" context="{'group_by':'product_weather_ids'}" />
+                    <filter string="Plant Type" name="product_plant_id" context="{'group_by':'product_plant_id'}" />
+                    <filter string="Fertilizer" name="product_fertilizer_id" context="{'group_by':'product_fertilizer_id'}" />
+                    <filter string="Seeds" name="product_seeds_id" context="{'group_by':'product_seeds_id'}" />
+                    <filter string="Soil" name="product_soil_id" context="{'group_by':'product_soil_id'}" />
+                    <filter string="Water" name="product_water_id" context="{'group_by':'product_water_id'}" />
+                    <filter string="Product Plant" name="product_plantproduct_id" context="{'group_by':'product_plantproduct_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
 </odoo>
