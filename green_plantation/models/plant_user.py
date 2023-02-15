@@ -13,7 +13,7 @@ class PlantUser(models.Model):
       selection=[('customer','Customer'),('farmer','Farmar'),('caretaker','Caretaker')]
    )
 
-   work_place_ids=fields.Many2one('product.vendor',string="Nursery Place")
+   work_place_id=fields.Many2one('product.vendor',string="Nursery Place")
 
    caretaker_work_place=fields.Text(string="Reason To Leave Previous Work Space")
    add_caretaker=fields.Text(string="Address Of Previous Workspace")

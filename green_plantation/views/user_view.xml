@@ -44,7 +44,7 @@
                     <notebook>
                         <page string="Farmer">
                             <group>
-                                <field name="work_place_ids"/>
+                                <field name="work_place_id"/>
                             </group>
                         </page>
                         <page string="caretaker">

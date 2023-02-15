@@ -17,7 +17,7 @@
             <tree string="Prpperties">
                 <field name="nursery_name" />
                 <field name="name" />
-                <field name="product_img" widget="image"/>
+                <field name="product_img" widget="image" />
                 <field name="product_plant_id" />
                 <field name="description" />
                 <field name="product_price" />
