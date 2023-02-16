@@ -16,6 +16,7 @@
             <menuitem id="plantation_water_category_action" name="Water" action="product_category_water"/>
             <menuitem id="plantation_product_category_action" name="Plant Product" action="product_category_plant_product"/>
             <menuitem id="plant_category_weather_action" name="Weather Condition" action="plant_weather_action"/>
+            <menuitem id="plant_medicine_action" name="Medicine" action="plant_medicine_product"/>
 
         </menuitem> 
         <menuitem id="plantation_fourth_level_menu" name="Orders">

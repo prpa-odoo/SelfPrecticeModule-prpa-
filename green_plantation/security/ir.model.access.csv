@@ -10,3 +10,4 @@ green_plantation.access_product_category_plant_product,access_product_category_p
 green_plantation.access_product_vendor,access_product_vendor,green_plantation.model_product_vendor,base.group_user,1,1,1,1
 green_plantation.access_plant_product,access_plant_product,green_plantation.model_plant_product,base.group_user,1,1,1,1
 green_plantation.access_product_temperature,access_product_temperature,green_plantation.model_product_temperature,base.group_user,1,1,1,1
+green_plantation.access_plant_medicine,access_plant_medicine,green_plantation.model_plant_medicine,base.group_user,1,1,1,1

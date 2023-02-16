@@ -1,10 +1,14 @@
-from odoo import fields,models
+from odoo import fields,models,api
 
 class PlantProduct(models.Model):
     _name="plant.product"
     _description="See All Available Products"
+    _rec_name="contact_no"
 
     nursery_name=fields.Many2one('product.vendor',required=True)
+    contact_no=fields.Char(compute='_compute_contactno')
+    address=fields.Text(compute='_compute_address')
+    email=fields.Char(compute='_compute_email')
     name=fields.Char(required=True,string="Product Title")
     description=fields.Text(required=True,string="Description")
     product_category=fields.Selection(
@@ -19,12 +23,30 @@ class PlantProduct(models.Model):
     product_water_id=fields.Many2one('product.category.water',string="Water")
     product_plantproduct_id=fields.Many2one('product.category.plant.product',string="Plant Product")
     product_tools=fields.Char(string="Tools")
-    product_medicine=fields.Char(string="Medicine")
+    product_medicine_id=fields.Many2one('plant.medicine',string="Medicine")
     product_price=fields.Float(string="Price")
-    product_img=fields.Image(max_height=70 , max_width=70)
+    product_img=fields.Image()
     product_weather_ids=fields.Many2many('product.temperature',string="Weather Condition")
     
     product_quantity=fields.Integer(string="Available Quantity")
+
+    @api.depends('nursery_name.contact_no')
+    def _compute_contactno(self):
+        for record in self:
+            record.contact_no=self.nursery_name.contact_no
+
+    @api.depends('nursery_name.address')
+    def _compute_address(self):
+        for record in self:
+            record.address=self.nursery_name.address
+
+    @api.depends('nursery_name.email')
+    def _compute_email(self):
+        for record in self:
+            record.email=self.nursery_name.email
+
+
+   
 
 
 
