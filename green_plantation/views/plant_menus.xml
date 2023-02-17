@@ -4,6 +4,7 @@
         <menuitem id="plantation_first_level_menu" name="Users">
             <menuitem id="plantation_user_action" name="customers" action="plant_action"/>
             <menuitem id="plantation_vendor_action" name="Nursery" action="product_vendor"/>
+            <menuitem id="plantation_doctor_action" name="Doctor" action="plant_doctor"/>
         </menuitem>
         <menuitem id="plantation_second_level_menu" name="Products">
             <menuitem id="plantation_product_action" name="products" action="plant_product_action"/>

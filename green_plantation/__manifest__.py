@@ -23,6 +23,7 @@
         'views/plant_weather.xml',
         'views/order_view.xml',
         'views/plant_medicine.xml',
+        'views/plant_doctor.xml',
         'views/plant_menus.xml'     
     ]
 }
