@@ -22,11 +22,18 @@ class PlantProduct(models.Model):
     product_soil_id=fields.Many2one('product.category.soil',string="Soil")
     product_water_id=fields.Many2one('product.category.water',string="Water")
     product_plantproduct_id=fields.Many2one('product.category.plant.product',string="Plant Product")
-    product_tools=fields.Char(string="Tools")
+    product_tools_id=fields.Many2one('plant.tools',string="Tools")
     product_medicine_id=fields.Many2one('plant.medicine',string="Medicine")
     product_price=fields.Float(string="Price")
     product_img=fields.Image()
     product_weather_ids=fields.Many2many('product.temperature',string="Weather Condition")
+
+    quantity=fields.Integer()
+    unit_price=fields.Integer()
+    taxes=fields.Integer()
+    sub_total=fields.Integer()
+    order_type_id=fields.Many2one('order.orders',string="Orders")
+
     
     product_quantity=fields.Integer(string="Available Quantity")
 
@@ -45,6 +52,10 @@ class PlantProduct(models.Model):
         for record in self:
             record.email=self.nursery_name.email
 
+    _sql_constraints = [
+        ('check_price','CHECK(product_price > 0)','Price Must Be Greter Then 0.'),
+
+    ]
 
    
 

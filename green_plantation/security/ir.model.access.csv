@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 green_plantation.access_plant_user,access_plant_user,green_plantation.model_plant_user,base.group_user,1,1,1,1
-green_plantation.access_orders,access_orders,green_plantation.model_orders,base.group_user,1,1,1,1
 green_plantation.access_product_category_plant,access_product_category_plant,green_plantation.model_product_category_plant,base.group_user,1,1,1,1
 green_plantation.access_product_category_fertilizer,access_product_category_fertilizer,green_plantation.model_product_category_fertilizer,base.group_user,1,1,1,1
 green_plantation.access_product_category_seeds,access_product_category_seeds,green_plantation.model_product_category_seeds,base.group_user,1,1,1,1
@@ -12,3 +11,5 @@ green_plantation.access_plant_product,access_plant_product,green_plantation.mode
 green_plantation.access_product_temperature,access_product_temperature,green_plantation.model_product_temperature,base.group_user,1,1,1,1
 green_plantation.access_plant_medicine,access_plant_medicine,green_plantation.model_plant_medicine,base.group_user,1,1,1,1
 green_plantation.access_plant_doctor,access_plant_doctor,green_plantation.model_plant_doctor,base.group_user,1,1,1,1
+green_plantation.access_plant_tools,access_plant_tools,green_plantation.model_plant_tools,base.group_user,1,1,1,1
+green_plantation.access_order_orders,access_order_orders,green_plantation.model_order_orders,base.group_user,1,1,1,1

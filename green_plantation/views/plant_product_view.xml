@@ -85,14 +85,10 @@
                                     </group>    
                                 </group>
                             </page>
-                            <page string="Medicine">
+                            <page string="Optional Product">
                                 <group>   
                                     <field name="product_medicine_id" />
-                                </group>
-                            </page>
-                            <page string="Tools">
-                                <group>   
-                                    <field name="product_tools" />
+                                    <field name="product_tools_id" />
                                 </group>
                             </page>
                         </notebook>
@@ -113,7 +109,7 @@
                 <field name="product_water_id" />
                 <field name="product_plantproduct_id" />
                 <field name="product_price" />
-                <field name="product_tools" />
+                <field name="product_tools_id" />
                 <!-- <filter string="Category" name="product_category"
                     domain="[('product_category','in',('plant','medicine','tools'))]" /> -->
                 <group>

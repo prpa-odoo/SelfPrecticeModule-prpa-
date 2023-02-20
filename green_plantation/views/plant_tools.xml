@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="plant_tools_products" model="ir.actions.act_window">
+            <field name="name">Tools</field>
+            <field name="res_model">plant.tools</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Enter Your First Record!!
+                </p>
+            </field>
+    </record>
+    <record id="plant_tools_products_tree_view" model="ir.ui.view">
+        <field name="name">Tools</field>
+        <field name="model">plant.tools</field>
+        <field name="arch" type="xml">
+            <tree string="Prpperties">
+                <field name="name" />
+                <field name="tools_img" widget="image" nolabel="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="plant_tools_products_form_view" model="ir.ui.view">
+        <field name="name">Tools</field>
+        <field name="model">plant.tools</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="name" string="Plant Tools"/>
+                    <h1>
+                        <field name="name"/>
+                        <field name="tools_img" widget="image" options='{"size": [60, 60]}' style="margin-left:170px"/>
+                    </h1>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
