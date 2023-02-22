@@ -36,6 +36,8 @@
                     <group>
                         <group>                      
                             <field name="address"/>
+                            <field name="country_name"/>
+                            <field name="city_id"/>
                             <field name="phone_no"/>
                             <field name="email" placeholder="priyanshi@gmail.com"/>
                             <field name="user_role" widget="radio"/>

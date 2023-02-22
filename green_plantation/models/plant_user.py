@@ -6,6 +6,9 @@ class PlantUser(models.Model):
 
    uname = fields.Char(required=True,string="UserName")
    address=fields.Text(string="Address")
+   country_id = fields.Many2one('res.country')
+   country_name = fields.Char(relate='country_id.name') 
+   city_id = fields.Many2one('res.city')
    phone_no=fields.Char(string="PhoneNo")
    email=fields.Char(string="Email")
    user_role=fields.Selection(
