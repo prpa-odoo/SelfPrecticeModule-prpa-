@@ -6,9 +6,7 @@ class PlantUser(models.Model):
 
    uname = fields.Char(required=True,string="UserName")
    address=fields.Text(string="Address")
-   country_id = fields.Many2one('res.country')
-   country_name = fields.Char(relate='country_id.name') 
-   city_id = fields.Many2one('res.city')
+   
    phone_no=fields.Char(string="PhoneNo")
    email=fields.Char(string="Email")
    user_role=fields.Selection(
@@ -22,5 +20,8 @@ class PlantUser(models.Model):
    add_caretaker=fields.Text(string="Address Of Previous Workspace")
 
    experiance=fields.Integer(string="Experiance")
+
+   country_id = fields.Many2one('res.country', string='Country')
+   state_id = fields.Many2one("res.country.state", string='State', domain="[('country_id', '=?', country_id)]")
 
 

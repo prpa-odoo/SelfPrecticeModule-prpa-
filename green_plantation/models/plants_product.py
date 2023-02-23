@@ -33,7 +33,10 @@ class PlantProduct(models.Model):
     taxes=fields.Integer()
     sub_total=fields.Integer()
     order_type_id=fields.Many2one('order.orders',string="Orders")
+    offer_ids=fields.One2many('plant.offer','offer_id',string="Available Offer")
 
+    customer_id=fields.Many2one('res.partner',copy=False,string="Customer")
+    owner_id=fields.Many2one('res.users',default=lambda self:self.env.user,string="owner")
     
     product_quantity=fields.Integer(string="Available Quantity")
 

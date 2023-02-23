@@ -13,3 +13,4 @@ green_plantation.access_plant_medicine,access_plant_medicine,green_plantation.mo
 green_plantation.access_plant_doctor,access_plant_doctor,green_plantation.model_plant_doctor,base.group_user,1,1,1,1
 green_plantation.access_plant_tools,access_plant_tools,green_plantation.model_plant_tools,base.group_user,1,1,1,1
 green_plantation.access_order_orders,access_order_orders,green_plantation.model_order_orders,base.group_user,1,1,1,1
+green_plantation.access_plant_offer,access_plant_offer,green_plantation.model_plant_offer,base.group_user,1,1,1,1

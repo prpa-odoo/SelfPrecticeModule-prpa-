@@ -27,25 +27,39 @@
             </tree>
         </field>
     </record>
-    <record id="plant_order_form_view" model="ir.ui.view">
+    <!-- <record id="plant_order_form_view" model="ir.ui.view">
         <field name="name">Plant_product</field>
         <field name="model">order.orders</field>
         <field name="arch" type="xml">
-                <!-- <header>
-                    <button name="action_send_email" string="Send by email" type="object" widget="email"/>
-                </header>                 -->
-                <!-- <button name="action_confirm"  title="Confirm" type="object" string="Confirm"/> -->
+               
 
             <form>
                 <h1>
                     <field name="name"/>
                 </h1>
                 <notebook>
-                    <page string="Properties">  
-                            <field name="product_ids"/>
-                            <field name="quantity"/>    
+                    <page string="Order Lines"> 
+                        <group>
+                            <group>
+                                <field name="product_ids"/>
+                            </group>
+                            <group>
+                                <field name="quantity"/> 
+                            </group>
+                        </group>    
                     </page>
                 </notebook>
+            </form>
+        </field>
+    </record> -->
+
+    <record id="plant_order_form_view" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">order.orders</field>
+        <field name="arch" type="xml">
+            <form string="Sales Order" class="o_sale_order">
+                <header>
+                </header>
             </form>
         </field>
     </record>

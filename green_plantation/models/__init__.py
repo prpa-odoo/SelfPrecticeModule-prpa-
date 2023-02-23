@@ -12,3 +12,4 @@ from . import plant_weather
 from . import plant_medicine
 from . import plant_doctor
 from . import plant_tools
+from . import plant_offer
