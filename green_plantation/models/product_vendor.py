@@ -10,6 +10,7 @@ class ProductVendor(models.Model):
     contact_no=fields.Char(string="Contact Number")
     address=fields.Text(string="Address")
     email=fields.Char(string="Enter E-mail Id")
+    available=fields.Boolean()
     experiance=fields.Integer(compute='_compute_year',readonly=True,string="Experiance Year")
     establish_date=fields.Selection(selection='years_selection',
         string="Establish Year")

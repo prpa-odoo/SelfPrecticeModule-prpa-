@@ -40,16 +40,16 @@
                             <field name="state_id"/>
                             <field name="phone_no"/>
                             <field name="email" placeholder="priyanshi@gmail.com"/>
-                            <field name="user_role" widget="radio"/>
+                            <field name="user_role" widget="radio" options="{'horizontal': true}" />                           
                         </group>
                     </group> 
                     <notebook>
-                        <page string="Farmer">
+                        <page string="Farmer" attrs="{'invisible':[('user_role', '!=','farmer')]}">
                             <group>
-                                <field name="work_place_id"/>
+                                <field name="work_place_id" domain="[('available','=',True)]" options="{'no_create':True}"/>
                             </group>
                         </page>
-                        <page string="caretaker">
+                        <page string="caretaker" attrs="{'invisible':[('user_role', '!=','caretaker')]}">
                             <group>
                                 <field name="caretaker_work_place"/>
                                 <field name="add_caretaker"/>

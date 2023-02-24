@@ -24,21 +24,26 @@ class PlantProduct(models.Model):
     product_plantproduct_id=fields.Many2one('product.category.plant.product',string="Plant Product")
     product_tools_id=fields.Many2one('plant.tools',string="Tools")
     product_medicine_id=fields.Many2one('plant.medicine',string="Medicine")
-    product_price=fields.Float(string="Price")
     product_img=fields.Image()
     product_weather_ids=fields.Many2many('product.temperature',string="Weather Condition")
+    
+    selling_price=fields.Float()
+    best_price = fields.Float(compute="_compute_bestprice")
 
-    quantity=fields.Integer()
-    unit_price=fields.Integer()
-    taxes=fields.Integer()
-    sub_total=fields.Integer()
     order_type_id=fields.Many2one('order.orders',string="Orders")
     offer_ids=fields.One2many('plant.offer','offer_id',string="Available Offer")
+    offer_status = fields.Selection(related="offer_ids.status")
 
     customer_id=fields.Many2one('res.partner',copy=False,string="Customer")
     owner_id=fields.Many2one('res.users',default=lambda self:self.env.user,string="owner")
     
     product_quantity=fields.Integer(string="Available Quantity")
+
+    state = fields.Selection(
+        string='State',
+        selection = [('instock','In Stock'),('outstock','Out Of stock')],
+        copy=False
+    )
 
     @api.depends('nursery_name.contact_no')
     def _compute_contactno(self):
@@ -55,10 +60,26 @@ class PlantProduct(models.Model):
         for record in self:
             record.email=self.nursery_name.email
 
-    _sql_constraints = [
-        ('check_price','CHECK(product_price > 0)','Price Must Be Greter Then 0.'),
+    def action_instock(self):
+        for record in self:
+            record.state="instock"
+            
 
-    ]
+    def action_outstock(self):
+        for record in self:
+            record.state="outstock"
+
+    @api.depends('offer_ids')
+    def _compute_bestprice(self):
+        for record in self:
+            if record.offer_ids:
+                record.best_price = max(record.offer_ids.mapped("price"))
+            else:
+                record.best_price=0.0
+
+         
+
+    
 
    
 

@@ -14,13 +14,13 @@
         <field name="name">Products</field>
         <field name="model">plant.product</field>
         <field name="arch" type="xml">
-            <tree string="Prpperties">
+            <tree string="Prpperties" decoration-success="state=='instock'" decoration-danger="state=='outstock'">
                 <field name="nursery_name" />
                 <field name="name" />
                 <field name="product_img" widget="image" options='{"size": [20, 20]}'/>
                 <field name="product_plant_id" />
                 <field name="description" />
-                <field name="product_price" />
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -29,7 +29,16 @@
         <field name="model">plant.product</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_instock" type="object" title="Confirm" string="In Stock" 
+                            attrs="{'invisible':[('state','in',('instock','outstock'))]}"/>
+                    <button name="action_outstock" type="object" title="Cancle" string="Out Of Stock" 
+                            attrs="{'invisible':[('state','in',('instock','outstock'))]}"/>
+                    <field name="state" widget="statusbar" options="{'clickable':'1'}" statusbar_visible="instock,outstock"/>
+                </header>
                 <sheet>
+                    <widget name="web_ribbon" title="In Stock" bg_color="bg-success" states="instock"/>
+                    <widget name="web_ribbon" title="Out Of Stock" bg_color="bg-danger" states="outstock"/> 
                             <label for="name" string="Enter Product Name"/>
                             <h1>
                                 <field name="name" />
@@ -60,10 +69,12 @@
                             <group><field name="description" /> </group>
                             <group>
                                 <group>
-                                    <field name="product_price" />
+                                    <field name="selling_price"/>
+                                    <field name="best_price"/>
                                 </group>
                                 <group>
                                     <field name="product_quantity"/>
+                                    
                                 </group>  
                             </group>  
                         
@@ -92,7 +103,8 @@
                                 </group>
                             </page>
                             <page string="Offers">
-                                <field name="offer_ids" nolabel="1"/>
+                                <field name="offer_ids" attrs="{'readonly':[('offer_status','=','accept')]}"/>
+                                <field name="offer_status" invisible="1"/> 
                             </page>
                             <page string="Other Info">
                                 <group>
@@ -117,7 +129,7 @@
                 <field name="product_soil_id" />
                 <field name="product_water_id" />
                 <field name="product_plantproduct_id" />
-                <field name="product_price" />
+                <field name="best_price" />
                 <field name="product_tools_id" />
                 <!-- <filter string="Category" name="product_category"
                     domain="[('product_category','in',('plant','medicine','tools'))]" /> -->

@@ -20,6 +20,7 @@
                 <field name="address" />
                 <field name="email" />
                 <field name="experiance" />
+                <field name="available"/>
             </tree>
         </field>
     </record>
@@ -52,6 +53,7 @@
                     <group>
                         <field name="address"/>
                         <field name="email" placeholder="abc@odoo.com"/>
+                        <field name="available"/>
                     </group>
                     
                 </sheet>
@@ -65,9 +67,7 @@
             <search>
                 <field name="name"/>
                 <field name="experiance"/>
-                <field name="address"/>
-
-                
+                <field name="address"/> 
             </search>
         </field>
     </record>

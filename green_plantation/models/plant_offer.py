@@ -5,6 +5,7 @@ from dateutil.relativedelta import relativedelta
 class PlantOffers(models.Model):
     _name="plant.offer"
     _description="Plant Offer"
+    _order="price desc"
 
     price = fields.Float()
     partner_id=fields.Many2one('res.partner',required=True)
@@ -40,6 +41,11 @@ class PlantOffers(models.Model):
     def action_accept(self):
         for record in self:
             record.status="accept"
+            record.offer_id.selling_price = record.price
+            record.offer_id.customer_id = record.partner_id
+            # record.offer_id.state = 'offer'
+
+            
 
     def action_cancle(self):
         for record in self:
