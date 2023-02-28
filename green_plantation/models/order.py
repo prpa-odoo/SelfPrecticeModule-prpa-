@@ -1,15 +1,15 @@
-from odoo import fields,models
+from odoo import fields,models,api
 
 class Order(models.Model):
     _name="order.orders"
     _description="See All Orders"
+    # _inherit = "res.users"
 
-    name=fields.Char(required=True)
-    description=fields.Char(string="description")
+    product_name=fields.Many2one('plant.product',required=True,string="Product Name")
+    description=fields.Text(related="product_name.description",string="description")
     quantity=fields.Integer()
     unit_price=fields.Integer()
-    taxes=fields.Integer()
-    sub_total=fields.Integer()
+    sub_total=fields.Integer(compute="_compute_price")
     offer=fields.Char()
 
     product_ids=fields.Many2many("plant.product",string="product")
@@ -27,4 +27,7 @@ class Order(models.Model):
     #         else:
     #             record.state="canceled"
 
-    
+    @api.depends('unit_price','quantity')
+    def _compute_price(self):
+        for record in self:
+                record.sub_total = record.quantity * record.unit_price

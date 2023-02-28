@@ -13,3 +13,4 @@ from . import plant_medicine
 from . import plant_doctor
 from . import plant_tools
 from . import plant_offer
+from . import plant_delivery

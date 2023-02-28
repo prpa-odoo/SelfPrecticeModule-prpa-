@@ -17,8 +17,13 @@
         <field name="model">order.orders</field>
         <field name="arch" type="xml">
             <tree string="Prpperties">
-                <field name="name" />
-                <field name="product_ids" widget="many2many_tags"/>                           
+                <field name="product_name" />
+                <field name="description"/>
+                <field name="quantity"/>
+                <field name="unit_price"/>
+                <field name="sub_total"/>
+
+                <!-- <field name="product_ids" widget="many2many_tags"/>                            -->
                 <!-- <field name="description"/>
                 <field name="quantity"/>
                 <field name="unit_price"/>
@@ -57,9 +62,20 @@
         <field name="name">sale.order.form</field>
         <field name="model">order.orders</field>
         <field name="arch" type="xml">
-            <form string="Sales Order" class="o_sale_order">
-                <header>
-                </header>
+            <form >
+                <sheet>
+                    <notebook>
+                        <page string="Order Lines"> 
+                            <group>
+                                <field name="product_name" />
+                                <field name="description"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="sub_total"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>

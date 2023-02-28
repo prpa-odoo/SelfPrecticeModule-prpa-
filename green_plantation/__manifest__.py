@@ -26,6 +26,7 @@
         'views/plant_tools.xml',
         'views/plant_doctor.xml',
         'views/plant_offer.xml',
+        'views/plant_delivery.xml',
         'views/plant_menus.xml'     
     ]
 }

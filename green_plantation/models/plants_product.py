@@ -3,12 +3,12 @@ from odoo import fields,models,api
 class PlantProduct(models.Model):
     _name="plant.product"
     _description="See All Available Products"
-    _rec_name="contact_no"
+    _rec_name="name"
 
     nursery_name=fields.Many2one('product.vendor',required=True)
-    contact_no=fields.Char(compute='_compute_contactno')
-    address=fields.Text(compute='_compute_address')
-    email=fields.Char(compute='_compute_email')
+    contact_no=fields.Char(related='nursery_name.contact_no')
+    address=fields.Text(related = 'nursery_name.address')
+    email=fields.Char(related='nursery_name.email')
     name=fields.Char(required=True,string="Product Title")
     description=fields.Text(required=True,string="Description")
     product_category=fields.Selection(
@@ -45,20 +45,20 @@ class PlantProduct(models.Model):
         copy=False
     )
 
-    @api.depends('nursery_name.contact_no')
-    def _compute_contactno(self):
-        for record in self:
-            record.contact_no=self.nursery_name.contact_no
+    # @api.depends('nursery_name.contact_no')
+    # def _compute_contactno(self):
+    #     for record in self:
+    #         record.contact_no=self.nursery_name.contact_no
 
-    @api.depends('nursery_name.address')
-    def _compute_address(self):
-        for record in self:
-            record.address=self.nursery_name.address
+    # @api.depends('nursery_name.address')
+    # def _compute_address(self):
+    #     for record in self:
+    #         record.address=self.nursery_name.address
 
-    @api.depends('nursery_name.email')
-    def _compute_email(self):
-        for record in self:
-            record.email=self.nursery_name.email
+    # @api.depends('nursery_name.email')
+    # def _compute_email(self):
+    #     for record in self:
+    #         record.email=self.nursery_name.email
 
     def action_instock(self):
         for record in self:
