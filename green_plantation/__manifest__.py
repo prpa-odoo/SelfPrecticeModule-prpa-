@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/user_view.xml',
         'views/plant_product_view.xml',
+        'views/plant_offer.xml',
         'views/product_category_plant.xml',
         'views/product_category_fertilizer.xml',
         'views/product_category_seeds.xml',
@@ -25,8 +26,8 @@
         'views/plant_medicine.xml',
         'views/plant_tools.xml',
         'views/plant_doctor.xml',
-        'views/plant_offer.xml',
         'views/plant_delivery.xml',
         'views/plant_menus.xml'     
-    ]
+    ],
+    'depends' : ['mail']
 }

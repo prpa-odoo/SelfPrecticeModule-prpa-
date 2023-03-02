@@ -5,3 +5,5 @@ class PlantMedicine(models.Model):
     _description="plant medicine"
 
     name=fields.Char(required=True)
+
+    medicine_ids = fields.One2many('plant.product','medicine_type_id')

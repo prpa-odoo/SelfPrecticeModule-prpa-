@@ -19,18 +19,39 @@
             </tree>
         </field>
     </record>
-    <record id="product_category_plant_form_view" model="ir.ui.view">
+    <record id="product_category_plants_form_view" model="ir.ui.view">
         <field name="name">Plant</field>
         <field name="model">product.category.plant</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <label for="name" string="Enter Plant Type"/>
-                    <h1>
-                        <field name="name" placeholder="tree,climbers"/>
-                    </h1>
+                  <div class="oe_button_box" name="button_box">
+                      <button class="oe_stat_button" name="%(offer_plant_action)d"
+                              type="action" icon="fa-bars">
+                          <div class="o_stat_info">
+                              <span class="o_stat_value">
+                                  <field name="offer_count"/>
+                              </span>
+                              <span class="o_stat_text">
+                                  Offers
+                              </span>
+                          </div>
+                      </button>
+                  </div>
+                  <h1>
+                      <field name="name"/>
+                  </h1>
+                  <notebook>
+                      <page string="Plants">  
+                              <field name="plant_ids">
+                                  <tree editable="bottom">
+                                      <field name="name"/>
+                                  </tree>
+                              </field>
+                      </page>
+                  </notebook>
                 </sheet>
-            </form>
+              </form>
         </field>
     </record>
 

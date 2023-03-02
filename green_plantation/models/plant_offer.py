@@ -20,6 +20,9 @@ class PlantOffers(models.Model):
 
     offer_id=fields.Many2one('plant.product',string="Offers")
 
+    offer_type_id = fields.Many2one(related = "offer_id", store = True)
+
+
     @api.depends('create_date','validity')
     def _compute_date(self):
         for record in self:

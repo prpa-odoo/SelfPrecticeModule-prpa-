@@ -6,3 +6,5 @@ class PlantTools(models.Model):
 
     name=fields.Char(required=True)
     tools_img=fields.Image()
+
+    tools_ids = fields.One2many('plant.product','tools_type_id')
