@@ -7,7 +7,7 @@ class PlantProduct(models.Model):
     _rec_name="name"
     # _inherit = "plant.product"
 
-    nursery_name=fields.Many2one('product.vendor',required=True)
+    nursery_name=fields.Many2one('product.vendor',required=True,store=True)
     contact_no=fields.Char(related='nursery_name.contact_no')
     address=fields.Text(related = 'nursery_name.address')
     email=fields.Char(related='nursery_name.email')
@@ -17,6 +17,9 @@ class PlantProduct(models.Model):
         string='Type',required=True,tracking=True,
         selection = [('plants','Plants'),('medicine','Medicine'),('tools','Tools')],
         )
+    sub_total=fields.Float()
+    quantity=fields.Integer()
+    unit_price=fields.Integer()
 
     product_plant_id=fields.Many2one('product.category.plant',string="Plants")
 
