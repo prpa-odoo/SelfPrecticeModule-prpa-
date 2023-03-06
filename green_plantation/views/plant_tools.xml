@@ -29,7 +29,7 @@
                     <label for="name" string="Plant Tools"/>
                     <h1>
                         <field name="name"/>
-                        <field name="tools_img" widget="image" options='{"size": [60, 60]}' style="margin-left:170px"/>
+                        <field name="tools_img" widget="image" options='{"size": [20, 20]}' style="margin-left:170px"/>
                     </h1>
                     <notebook>
                         <page string="Tools">  

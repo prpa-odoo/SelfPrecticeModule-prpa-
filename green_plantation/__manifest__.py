@@ -12,6 +12,9 @@
     'data' : [
         'security/ir.model.access.csv',
         'views/user_view.xml',
+        'reports/green_plantation_reports.xml',
+        'reports/green_plantation_templete.xml',
+        'views/order_view.xml',
         'views/plant_product_view.xml',
         'views/plant_offer.xml',
         'views/product_category_plant.xml',
@@ -22,7 +25,6 @@
         'views/product_category_plant_product.xml',
         'views/product_vendor.xml',
         'views/plant_weather.xml',
-        'views/order_view.xml',
         'views/plant_medicine.xml',
         'views/plant_tools.xml',
         'views/plant_doctor.xml',

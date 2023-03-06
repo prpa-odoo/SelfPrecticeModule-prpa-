@@ -6,4 +6,4 @@ class PlantMedicine(models.Model):
 
     name=fields.Char(required=True)
 
-    medicine_ids = fields.One2many('plant.product','medicine_type_id')
+    

@@ -13,8 +13,13 @@ class PlantProductTest(models.Model):
                     "name" : self.name
                 })
 
-            if self.product_category == "medicine":
-                self.env['plant.medicine'].create({
+            if self.product_category == "fertilizer":
+                self.env['plant.fertilizer'].create({
+                    "name" : self.name
+                })
+
+            if self.product_category == "seeds":
+                self.env['plant.seeds'].create({
                     "name" : self.name
                 })
 

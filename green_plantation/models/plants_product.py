@@ -11,13 +11,14 @@ class PlantProduct(models.Model):
     contact_no=fields.Char(related='nursery_name.contact_no')
     address=fields.Text(related = 'nursery_name.address')
     email=fields.Char(related='nursery_name.email')
-    name=fields.Char(required=True,string="Product Title")
+    name=fields.Char(required=True,string="Product Name")
     description=fields.Text(required=True,string="Description")
     product_category=fields.Selection(
         string='Type',required=True,tracking=True,
-        selection = [('plants','Plants'),('medicine','Medicine'),('tools','Tools')],
+        selection = [('plants','Plants'),('tools','Tools'),('fertilizer','Fertilizer'),
+        ('seeds','Seeds')],
         )
-    sub_total=fields.Float()
+    sub_total=fields.Integer(compute="_compute_price")
     quantity=fields.Integer()
     unit_price=fields.Integer()
 
@@ -27,8 +28,15 @@ class PlantProduct(models.Model):
 
 
     product_fertilizer_id=fields.Many2one('product.category.fertilizer',string="Fertilizer")
+    fertilizer_type_id = fields.Many2one(related='product_fertilizer_id',store = True)
+
     product_seeds_id=fields.Many2one('product.category.seeds',string="Seeds")
+    seeds_type_id = fields.Many2one(related='product_seeds_id',store = True)
+
+
     product_soil_id=fields.Many2one('product.category.soil',string="Soil")
+
+    
     product_water_id=fields.Many2one('product.category.water',string="Water")
     product_plantproduct_id=fields.Many2one('product.category.plant.product',string="Plant Product")
     product_tools_id=fields.Many2one('plant.tools',string="Tools")
@@ -36,7 +44,7 @@ class PlantProduct(models.Model):
 
 
     product_medicine_id=fields.Many2one('plant.medicine',string="Medicine")
-    medicine_type_id = fields.Many2one(related='product_medicine_id',store = True)
+    
 
     product_img=fields.Image()
     product_weather_ids=fields.Many2many('product.temperature',string="Weather Condition")
@@ -92,7 +100,11 @@ class PlantProduct(models.Model):
             else:
                 record.best_price=0.0
 
-    
+    @api.depends('quantity','unit_price')
+    def _compute_price(self):
+        for record in self:
+            record.sub_total = record.quantity *record.unit_price
+
 
 
          

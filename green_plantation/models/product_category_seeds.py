@@ -5,3 +5,5 @@ class ProductCategorySeeds(models.Model):
     _description="See All Available Products Seeds"
 
     name=fields.Char(required=True)
+
+    seeds_ids = fields.One2many('plant.product','seeds_type_id')
