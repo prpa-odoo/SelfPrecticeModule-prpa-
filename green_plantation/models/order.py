@@ -27,7 +27,7 @@ class Order(models.Model):
         string='Type',tracking=True,
         selection = [('plants','Plants'),('medicine','Medicine'),('tools','Tools')],
         )
-    total = fields.Float()
+    total = fields.Float(compute="_compute_total")
 
 
     # def action_cancle(self):
@@ -44,9 +44,12 @@ class Order(models.Model):
         vals['seq_name'] = self.env['ir.sequence'].next_by_code('order.orders')
         return super(Order,self).create(vals)
 
-    # @api.depends('sub_total')
-    # def _compute_total(self):
-    #     for record in self:
-    #         record.total = self *record.product_ids.sub_total
+    @api.depends('product_ids.sub_total')
+    def _compute_total(self):
+        t=0
+        for record in self.product_ids:
+            t=t+record.sub_total
+        self.total=t
+            
 
     

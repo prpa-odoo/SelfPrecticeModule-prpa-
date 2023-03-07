@@ -4,7 +4,6 @@
         <field name="name">Plant Offers</field>
         <field name="res_model">plant.offer</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('offer_type_id', '=', active_id)]</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
             Create a new Property Offer

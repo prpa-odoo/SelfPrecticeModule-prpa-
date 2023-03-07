@@ -14,12 +14,12 @@ class PlantProductTest(models.Model):
                 })
 
             if self.product_category == "fertilizer":
-                self.env['plant.fertilizer'].create({
+                self.env['product.category.fertilizer'].create({
                     "name" : self.name
                 })
 
             if self.product_category == "seeds":
-                self.env['plant.seeds'].create({
+                self.env['product.category.seeds'].create({
                     "name" : self.name
                 })
 
@@ -28,5 +28,5 @@ class PlantProductTest(models.Model):
                     "name" : self.name
                 })
                 
-                return super(PlantProductTest,self).action_instock()
+            return super(PlantProductTest,self).action_instock()
             

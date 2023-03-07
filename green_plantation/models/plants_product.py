@@ -18,7 +18,8 @@ class PlantProduct(models.Model):
         selection = [('plants','Plants'),('tools','Tools'),('fertilizer','Fertilizer'),
         ('seeds','Seeds')],
         )
-    sub_total=fields.Integer(compute="_compute_price")
+
+    sub_total=fields.Integer(compute="_compute_price",store=True)
     quantity=fields.Integer()
     unit_price=fields.Integer()
 
